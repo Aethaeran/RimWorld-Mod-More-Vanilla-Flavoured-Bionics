@@ -554,13 +554,17 @@
     <addsHediff>ArchotechKidney</addsHediff>
   </RecipeDef>
 
-  <!-- TODO: archotech liver -->
+  <!-- archotech liver -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechLiver</defName>
     <label>archotech liver</label>
     <labelNoun>an archotech liver</labelNoun>
+    <description>An installed archotech liver.</description>
+    <descriptionHyperlinks><ThingDef>ArchotechLiver</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>ArchotechLiver</spawnThingOnRemoved>
+    <woundAnchorRange>0</woundAnchorRange>
+    <displayWound>true</displayWound>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>1.50</partEfficiency>
@@ -571,35 +575,26 @@
     <defName>ArchotechLiver</defName>
     <label>archotech liver</label>
     <description>An archotech human liver. Plays an important role in metabolism.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
+    <descriptionHyperlinks><RecipeDef>InstallArchotechLiver</RecipeDef></descriptionHyperlinks>
     <statBases>
       <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
+      <Mass>2</Mass>
     </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallArchotechLiver</defName>
     <label>install archotech liver</label>
-    <description>Install a archotech liver.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <description>Install an archotech liver.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ArchotechLiver</ThingDef>
+      <HediffDef>ArchotechLiver</HediffDef>
+    </descriptionHyperlinks>
     <jobString>Installing archotech liver.</jobString>
-    <workAmount>2500</workAmount>
-    <skillRequirements>
-      <Medicine>3</Medicine>
-    </skillRequirements>
     <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
       <li>
         <filter>
           <thingDefs>
@@ -610,9 +605,6 @@
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
       <thingDefs>
         <li>ArchotechLiver</li>
       </thingDefs>
