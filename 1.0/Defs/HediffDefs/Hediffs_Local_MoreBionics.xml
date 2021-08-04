@@ -90,7 +90,6 @@
       <partEfficiency>1.50</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechLung</defName>
@@ -124,6 +123,5 @@
       <partEfficiency>1.50</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  
 
 </Defs>
