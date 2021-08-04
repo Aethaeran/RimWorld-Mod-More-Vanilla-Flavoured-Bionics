@@ -132,14 +132,14 @@
   <!-- bionic organs -->
 
   <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
+  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItem in any active mod or in base resources. -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicLung</defName>
     <label>bionic lung</label>
     <description>A bionic human lung. A pair of these form the core of the human respiratory system.</description>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemBionic</texPath>
+      <texPath>Things/Item/Health/HealthItem</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
     </graphicData>
@@ -172,14 +172,14 @@
   </ThingDef>
 
   <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
+  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItem in any active mod or in base resources. -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicKidney</defName>
     <label>bionic kidney</label>
     <description>A bionic human kidney. Filters and removes waste products from the blood.</description>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemBionic</texPath>
+      <texPath>Things/Item/Health/HealthItem</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
     </graphicData>
@@ -212,14 +212,14 @@
   </ThingDef>
 
   <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
+  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItem in any active mod or in base resources. -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicLiver</defName>
     <label>bionic liver</label>
     <description>A bionic human liver. Plays an important role in metabolism.</description>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemBionic</texPath>
+      <texPath>Things/Item/Health/HealthItem</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
     </graphicData>
