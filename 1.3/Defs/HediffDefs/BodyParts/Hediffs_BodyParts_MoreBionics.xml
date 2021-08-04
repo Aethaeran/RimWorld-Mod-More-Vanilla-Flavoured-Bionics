@@ -372,13 +372,17 @@
     <addsHediff>ArchotechStomach</addsHediff>
   </RecipeDef>
 
-  <!-- TODO: archotech ear -->
+  <!-- archotech ear -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechEar</defName>
     <label>archotech ear</label>
     <labelNoun>an archotech ear</labelNoun>
+    <description>An installed archotech ear.</description>
+    <descriptionHyperlinks><ThingDef>ArchotechEar</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>ArchotechEar</spawnThingOnRemoved>
+    <woundAnchorRange>0</woundAnchorRange>
+    <displayWound>true</displayWound>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>1.50</partEfficiency>
@@ -389,35 +393,25 @@
     <defName>ArchotechEar</defName>
     <label>archotech ear</label>
     <description>An advanced artificial ear implant. A collection of invisible subdermal microphones capture sound and transmit it to a biogel nerve interface that links directly with the auditory nerve. It's sensitive enough to hear a cat before you see it, can't be damaged by loud noise, and automatically tunes itself to pick out meaningful sounds in noisy environments.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
+    <descriptionHyperlinks><RecipeDef>InstallArchotechEar</RecipeDef></descriptionHyperlinks>
     <statBases>
       <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
     </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallArchotechEar</defName>
     <label>install archotech ear</label>
-    <description>Install a archotech ear.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <description>Install an archotech ear.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ArchotechEar</ThingDef>
+      <HediffDef>ArchotechEar</HediffDef>
+    </descriptionHyperlinks>
     <jobString>Installing archotech ear.</jobString>
-    <workAmount>2500</workAmount>
-    <skillRequirements>
-      <Medicine>3</Medicine>
-    </skillRequirements>
     <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
       <li>
         <filter>
           <thingDefs>
@@ -428,9 +422,6 @@
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
       <thingDefs>
         <li>ArchotechEar</li>
       </thingDefs>
