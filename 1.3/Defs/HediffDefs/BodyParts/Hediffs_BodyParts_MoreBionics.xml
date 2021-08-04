@@ -145,71 +145,43 @@
     <defName>BionicLung</defName>
     <label>bionic lung</label>
     <labelNoun>an bionic lung</labelNoun>
+    <description>An installed bionic lung.</description>
+    <descriptionHyperlinks><ThingDef>BionicLung</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>BionicLung</spawnThingOnRemoved>
+    <woundAnchorRange>0</woundAnchorRange>
+    <displayWound>true</displayWound>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>1.25</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
   </HediffDef>
-
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicLung</defName>
     <label>bionic lung</label>
     <description>A bionic human lung. A pair of these form the core of the human respiratory system.</description>
-    <graphicData>
-      <texPath>Things/Item/Health/HealthItem</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.80</drawSize>
-    </graphicData>
-    <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
-      <effectWorking>Smith</effectWorking>
-      <soundWorking>Recipe_Smith</soundWorking>
-      <recipeUsers>
-        <li>FabricationBench</li>
-      </recipeUsers>
-      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
-      <skillRequirements>
-        <Crafting>8</Crafting>
-      </skillRequirements>
-      <researchPrerequisite>Bionics</researchPrerequisite>
-    </recipeMaker>
-    <techLevel>Spacer</techLevel>
+    <descriptionHyperlinks><RecipeDef>InstallBionicLung</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
       <ComponentSpacer>4</ComponentSpacer>
     </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>
-      <WorkToMake>38000</WorkToMake>
       <Mass>0.3</Mass>
     </statBases>
-    <techHediffsTags>
-      <li>Advanced</li>
-    </techHediffsTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallBionicLung</defName>
     <label>install bionic lung</label>
     <description>Install a bionic lung.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <descriptionHyperlinks>
+      <ThingDef>BionicLung</ThingDef>
+      <HediffDef>BionicLung</HediffDef>
+    </descriptionHyperlinks>
     <jobString>Installing bionic lung.</jobString>
-    <workAmount>2000</workAmount>
-    <skillRequirements>
-      <Medicine>5</Medicine>
-    </skillRequirements>
     <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
       <li>
         <filter>
           <thingDefs>
@@ -220,9 +192,6 @@
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
       <thingDefs>
         <li>BionicLung</li>
       </thingDefs>
