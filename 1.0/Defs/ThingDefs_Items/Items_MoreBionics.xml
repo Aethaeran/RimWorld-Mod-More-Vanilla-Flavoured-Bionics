@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!-- TODO: Figure out which version this actually works on. -->
+
   <!-- bases -->
 
   <ThingDef Name="BodyPartBase" Abstract="True">
@@ -26,8 +28,6 @@
     <pathCost>10</pathCost>
   </ThingDef>
 
-  <!-- TODO: Could not resolve cross-reference to Verse.ThingCategoryDef named BodyPartsArtificial (wanter=thingCategories) -->
-
   <ThingDef Name="BodyPartArtificialBase" ParentName="BodyPartBase" Abstract="True">
     <thingCategories>
       <li>BodyPartsArtificial</li>
@@ -51,8 +51,6 @@
     </statBases>
   </ThingDef>
 
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-
   <ThingDef Name="BodyPartProstheticBase" ParentName="BodyPartArtificialBase" Abstract="True">
     <graphicData>
       <texPath>Things/Item/Health/HealthItemProsthetic</texPath>
@@ -75,8 +73,6 @@
     </recipeMaker>
   </ThingDef>
 
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
-
   <ThingDef Name="BodyPartBionicBase" ParentName="BodyPartProstheticBase" Abstract="True">
     <graphicData>
       <texPath>Things/Item/Health/HealthItemBionic</texPath>
@@ -94,8 +90,6 @@
     </recipeMaker>
   </ThingDef>
 
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemArchotech in any active mod or in base resources. -->
-
   <ThingDef Name="BodyPartArchotechBase" ParentName="BodyPartArtificialBase" Abstract="True">
     <graphicData>
       <texPath>Things/Item/Health/HealthItemArchotech</texPath>
@@ -106,9 +100,6 @@
 
 
   <!-- bionic organs -->
-
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicLung</defName>
@@ -147,9 +138,6 @@
     </techHediffsTags>
   </ThingDef>
 
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
-
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicKidney</defName>
     <label>bionic kidney</label>
@@ -186,9 +174,6 @@
       <li>Advanced</li>
     </techHediffsTags>
   </ThingDef>
-
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicLiver</defName>
