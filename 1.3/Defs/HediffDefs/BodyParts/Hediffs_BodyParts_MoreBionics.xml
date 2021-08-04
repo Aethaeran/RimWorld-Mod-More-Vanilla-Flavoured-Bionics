@@ -330,16 +330,19 @@
 
   <!-- archotech organs -->
 
-  <!-- TODO: archotech spine -->
+  <!-- archotech spine -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechSpine</defName>
     <label>archotech spine</label>
     <labelNoun>an archotech spine</labelNoun>
+    <description>An installed archotech spine.</description>
+    <descriptionHyperlinks><ThingDef>ArchotechSpine</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>ArchotechSpine</spawnThingOnRemoved>
+    <woundAnchorRange>0</woundAnchorRange>
+    <displayWound>true</displayWound>
     <addedPartProps>
       <solid>true</solid>
-    <!-- Added the following line to see if spine efficiency even does anything -->
       <partEfficiency>1.50</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -348,35 +351,26 @@
     <defName>ArchotechSpine</defName>
     <label>archotech spine</label>
     <description>An advanced artificial spine. A biogel nerve bundle runs down an articulated plasteel core, surrounded by a lattice-dust healing system. It matches the performance of a archotech spine.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
+    <descriptionHyperlinks><RecipeDef>InstallArchotechSpine</RecipeDef></descriptionHyperlinks>
     <statBases>
       <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
+      <Mass>2</Mass>
     </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallArchotechSpine</defName>
     <label>install archotech spine</label>
-    <description>Install a archotech spine.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <description>Install an archotech spine.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ArchotechSpine</ThingDef>
+      <HediffDef>ArchotechSpine</HediffDef>
+    </descriptionHyperlinks>
     <jobString>Installing archotech spine.</jobString>
-    <workAmount>3500</workAmount>
-    <skillRequirements>
-      <Medicine>3</Medicine>
-    </skillRequirements>
     <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
       <li>
         <filter>
           <thingDefs>
@@ -387,9 +381,6 @@
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
       <thingDefs>
         <li>ArchotechSpine</li>
       </thingDefs>
