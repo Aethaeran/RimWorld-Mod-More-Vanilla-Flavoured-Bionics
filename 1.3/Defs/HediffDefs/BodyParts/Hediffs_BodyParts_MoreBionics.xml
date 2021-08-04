@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- bases -->
+    <!-- TODO: hediff bases -->
+
+    <HediffDef Name="AddedBodyPartBase" Abstract="True">
+        <hediffClass>Hediff_AddedPart</hediffClass>
+        <defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+        <isBad>false</isBad>
+    </HediffDef>
+
+  <!-- TODO: thing bases -->
 
   <ThingDef Name="BodyPartBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
@@ -52,8 +60,6 @@
       <DeteriorationRate>4.0</DeteriorationRate>
     </statBases>
   </ThingDef>
-
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
 
   <ThingDef Name="BodyPartProstheticBase" ParentName="BodyPartBase" Abstract="True">
     <techLevel>Industrial</techLevel>
@@ -123,7 +129,28 @@
     </statBases>
   </ThingDef>
 
-  <!-- bionic organs -->
+    <!-- TODO: recipe bases -->
+
+	<RecipeDef Abstract="True" Name="SurgeryFlesh">
+		<effectWorking>Surgery</effectWorking>
+		<soundWorking>Recipe_Surgery</soundWorking>
+		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+		<workSkill>Medicine</workSkill>
+		<workSkillLearnFactor>16</workSkillLearnFactor>
+	</RecipeDef>
+
+  <!-- TODO: bionic lung -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>BionicLung</defName>
+    <label>bionic lung</label>
+    <labelNoun>an bionic lung</labelNoun>
+    <spawnThingOnRemoved>BionicLung</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.25</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
 
   <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
 
@@ -163,280 +190,6 @@
       <li>Advanced</li>
     </techHediffsTags>
   </ThingDef>
-
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-
-  <ThingDef ParentName="BodyPartBionicBase">
-    <defName>BionicKidney</defName>
-    <label>bionic kidney</label>
-    <description>A bionic human kidney. Filters and removes waste products from the blood.</description>
-    <graphicData>
-      <texPath>Things/Item/Health/HealthItem</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.80</drawSize>
-    </graphicData>
-    <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
-      <effectWorking>Smith</effectWorking>
-      <soundWorking>Recipe_Smith</soundWorking>
-      <recipeUsers>
-        <li>FabricationBench</li>
-      </recipeUsers>
-      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
-      <skillRequirements>
-        <Crafting>8</Crafting>
-      </skillRequirements>
-      <researchPrerequisite>Bionics</researchPrerequisite>
-    </recipeMaker>
-    <techLevel>Spacer</techLevel>
-    <costList>
-      <Plasteel>10</Plasteel>
-      <ComponentSpacer>4</ComponentSpacer>
-    </costList>
-    <statBases>
-      <WorkToMake>38000</WorkToMake>
-      <Mass>0.3</Mass>
-    </statBases>
-    <techHediffsTags>
-      <li>Advanced</li>
-    </techHediffsTags>
-  </ThingDef>
-
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-
-  <ThingDef ParentName="BodyPartBionicBase">
-    <defName>BionicLiver</defName>
-    <label>bionic liver</label>
-    <description>A bionic human liver. Plays an important role in metabolism.</description>
-    <graphicData>
-      <texPath>Things/Item/Health/HealthItem</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.80</drawSize>
-    </graphicData>
-    <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
-      <effectWorking>Smith</effectWorking>
-      <soundWorking>Recipe_Smith</soundWorking>
-      <recipeUsers>
-        <li>FabricationBench</li>
-      </recipeUsers>
-      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
-      <skillRequirements>
-        <Crafting>8</Crafting>
-      </skillRequirements>
-      <researchPrerequisite>Bionics</researchPrerequisite>
-    </recipeMaker>
-    <techLevel>Spacer</techLevel>
-    <costList>
-      <Plasteel>10</Plasteel>
-      <ComponentSpacer>4</ComponentSpacer>
-    </costList>
-    <statBases>
-      <WorkToMake>38000</WorkToMake>
-      <Mass>0.3</Mass>
-    </statBases>
-    <techHediffsTags>
-      <li>Advanced</li>
-    </techHediffsTags>
-  </ThingDef>
-
-  <!-- archotech organs -->
-
-  <ThingDef ParentName="BodyPartArchotechBase">
-    <defName>ArchotechLung</defName>
-    <label>archotech lung</label>
-    <description>An archotech human lung. A pair of these form the core of the human respiratory system.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
-    <statBases>
-      <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
-    </statBases>
-  </ThingDef>
-
-  <ThingDef ParentName="BodyPartArchotechBase">
-    <defName>ArchotechKidney</defName>
-    <label>archotech kidney</label>
-    <description>An archotech human kidney. Filters and removes waste products from the blood.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
-    <statBases>
-      <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
-    </statBases>
-  </ThingDef>
-
-  <ThingDef ParentName="BodyPartArchotechBase">
-    <defName>ArchotechLiver</defName>
-    <label>archotech liver</label>
-    <description>An archotech human liver. Plays an important role in metabolism.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
-    <statBases>
-      <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
-    </statBases>
-  </ThingDef>
-
-  <ThingDef ParentName="BodyPartArchotechBase">
-    <defName>ArchotechSpine</defName>
-    <label>archotech spine</label>
-    <description>An advanced artificial spine. A biogel nerve bundle runs down an articulated plasteel core, surrounded by a lattice-dust healing system. It matches the performance of a archotech spine.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
-    <statBases>
-      <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
-    </statBases>
-  </ThingDef>
-
-  <ThingDef ParentName="BodyPartArchotechBase">
-    <defName>ArchotechHeart</defName>
-    <label>archotech heart</label>
-    <description>An advanced artificial heart. It has synthetic muscle fibers for a realistic heartbeat, plus a high-flow pump for rapid circulation during high stress. It is better than a archotech heart in almost every way.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
-    <statBases>
-      <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
-    </statBases>
-  </ThingDef>
-
-  <ThingDef ParentName="BodyPartArchotechBase">
-    <defName>ArchotechStomach</defName>
-    <label>archotech stomach</label>
-    <description>An advanced artificial stomach. A set of sensors and chemical synthesizers efficiently digest nearly any energy-bearing foodstuff. An integrated lattice-dust healing system automatically repairs any damage caused by the powerful acids. It is better than a archotech stomach in almost every way.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
-    <statBases>
-      <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
-    </statBases>
-  </ThingDef>
-
-  <ThingDef ParentName="BodyPartArchotechBase">
-    <defName>ArchotechEar</defName>
-    <label>archotech ear</label>
-    <description>An advanced artificial ear implant. A collection of invisible subdermal microphones capture sound and transmit it to a biogel nerve interface that links directly with the auditory nerve. It's sensitive enough to hear a cat before you see it, can't be damaged by loud noise, and automatically tunes itself to pick out meaningful sounds in noisy environments.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
-    <statBases>
-      <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
-    </statBases>
-  </ThingDef>
-
-    <!-- bases -->
-
-	<RecipeDef Abstract="True" Name="SurgeryFlesh">
-		<effectWorking>Surgery</effectWorking>
-		<soundWorking>Recipe_Surgery</soundWorking>
-		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
-		<workSkill>Medicine</workSkill>
-		<workSkillLearnFactor>16</workSkillLearnFactor>
-	</RecipeDef>
-
-    <!-- Added bionic parts 	-->
-
-  <RecipeDef ParentName="SurgeryFlesh">
-    <defName>InstallBionicKidney</defName>
-    <label>install bionic kidney</label>
-    <description>Install a bionic kidney.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
-    <jobString>Installing bionic kidney.</jobString>
-    <workAmount>2000</workAmount>
-    <skillRequirements>
-      <Medicine>5</Medicine>
-    </skillRequirements>
-    <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>BionicKidney</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
-    </ingredients>
-    <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
-      <thingDefs>
-        <li>BionicKidney</li>
-      </thingDefs>
-    </fixedIngredientFilter>
-    <appliedOnFixedBodyParts>
-      <li>Kidney</li>
-    </appliedOnFixedBodyParts>
-    <addsHediff>BionicKidney</addsHediff>
-  </RecipeDef>
-
-  <RecipeDef ParentName="SurgeryFlesh">
-    <defName>InstallBionicLiver</defName>
-    <label>install bionic liver</label>
-    <description>Install a bionic liver.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
-    <jobString>Installing bionic liver.</jobString>
-    <workAmount>2000</workAmount>
-    <skillRequirements>
-      <Medicine>5</Medicine>
-    </skillRequirements>
-    <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>BionicLiver</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
-    </ingredients>
-    <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
-      <thingDefs>
-        <li>BionicLiver</li>
-      </thingDefs>
-    </fixedIngredientFilter>
-    <appliedOnFixedBodyParts>
-      <li>Liver</li>
-    </appliedOnFixedBodyParts>
-    <addsHediff>BionicLiver</addsHediff>
-  </RecipeDef>
 
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>InstallBionicLung</defName>
@@ -480,7 +233,223 @@
     <addsHediff>BionicLung</addsHediff>
   </RecipeDef>
 
-  <!--==================== Install artificial parts =======================-->
+  <!-- TODO: bionic kidney -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>BionicKidney</defName>
+    <label>bionic kidney</label>
+    <labelNoun>an bionic kidney</labelNoun>
+    <spawnThingOnRemoved>BionicKidney</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.25</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>BionicKidney</defName>
+    <label>bionic kidney</label>
+    <description>A bionic human kidney. Filters and removes waste products from the blood.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>Bionics</researchPrerequisite>
+    </recipeMaker>
+    <techLevel>Spacer</techLevel>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <statBases>
+      <WorkToMake>38000</WorkToMake>
+      <Mass>0.3</Mass>
+    </statBases>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallBionicKidney</defName>
+    <label>install bionic kidney</label>
+    <description>Install a bionic kidney.</description>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <jobString>Installing bionic kidney.</jobString>
+    <workAmount>2000</workAmount>
+    <skillRequirements>
+      <Medicine>5</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>BionicKidney</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>BionicKidney</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Kidney</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>BionicKidney</addsHediff>
+  </RecipeDef>
+
+  <!-- TODO: bionic liver -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>BionicLiver</defName>
+    <label>bionic liver</label>
+    <labelNoun>an bionic liver</labelNoun>
+    <spawnThingOnRemoved>BionicLiver</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.25</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>BionicLiver</defName>
+    <label>bionic liver</label>
+    <description>A bionic human liver. Plays an important role in metabolism.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>Bionics</researchPrerequisite>
+    </recipeMaker>
+    <techLevel>Spacer</techLevel>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <statBases>
+      <WorkToMake>38000</WorkToMake>
+      <Mass>0.3</Mass>
+    </statBases>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallBionicLiver</defName>
+    <label>install bionic liver</label>
+    <description>Install a bionic liver.</description>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <jobString>Installing bionic liver.</jobString>
+    <workAmount>2000</workAmount>
+    <skillRequirements>
+      <Medicine>5</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>BionicLiver</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>BionicLiver</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Liver</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>BionicLiver</addsHediff>
+  </RecipeDef>
+
+  <!-- archotech organs -->
+
+  <!-- TODO: archotech spine -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>ArchotechSpine</defName>
+    <label>archotech spine</label>
+    <labelNoun>an archotech spine</labelNoun>
+    <spawnThingOnRemoved>ArchotechSpine</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    <!-- Added the following line to see if spine efficiency even does anything -->
+      <partEfficiency>1.50</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartArchotechBase">
+    <defName>ArchotechSpine</defName>
+    <label>archotech spine</label>
+    <description>An advanced artificial spine. A biogel nerve bundle runs down an articulated plasteel core, surrounded by a lattice-dust healing system. It matches the performance of a archotech spine.</description>
+    <techLevel>Archotech</techLevel>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>2800</MarketValue>
+      <Mass>7</Mass>
+    </statBases>
+  </ThingDef>
 
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>InstallArchotechSpine</defName>
@@ -524,6 +493,33 @@
     <addsHediff>ArchotechSpine</addsHediff>
   </RecipeDef>
 
+  <!-- TODO: archotech heart -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>ArchotechHeart</defName>
+    <label>archotech heart</label>
+    <labelNoun>an archotech heart</labelNoun>
+    <spawnThingOnRemoved>ArchotechHeart</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.50</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartArchotechBase">
+    <defName>ArchotechHeart</defName>
+    <label>archotech heart</label>
+    <description>An advanced artificial heart. It has synthetic muscle fibers for a realistic heartbeat, plus a high-flow pump for rapid circulation during high stress. It is better than a archotech heart in almost every way.</description>
+    <techLevel>Archotech</techLevel>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>2800</MarketValue>
+      <Mass>7</Mass>
+    </statBases>
+  </ThingDef>
+
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>InstallArchotechHeart</defName>
     <label>install archotech heart</label>
@@ -565,6 +561,33 @@
     </appliedOnFixedBodyParts>
     <addsHediff>ArchotechHeart</addsHediff>
   </RecipeDef>
+
+  <!-- TODO: archotech stomach -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>ArchotechStomach</defName>
+    <label>archotech stomach</label>
+    <labelNoun>an archotech stomach</labelNoun>
+    <spawnThingOnRemoved>ArchotechStomach</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.50</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartArchotechBase">
+    <defName>ArchotechStomach</defName>
+    <label>archotech stomach</label>
+    <description>An advanced artificial stomach. A set of sensors and chemical synthesizers efficiently digest nearly any energy-bearing foodstuff. An integrated lattice-dust healing system automatically repairs any damage caused by the powerful acids. It is better than a archotech stomach in almost every way.</description>
+    <techLevel>Archotech</techLevel>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>2800</MarketValue>
+      <Mass>7</Mass>
+    </statBases>
+  </ThingDef>
 
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>InstallArchotechStomach</defName>
@@ -608,6 +631,33 @@
     <addsHediff>ArchotechStomach</addsHediff>
   </RecipeDef>
 
+  <!-- TODO: archotech ear -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>ArchotechEar</defName>
+    <label>archotech ear</label>
+    <labelNoun>an archotech ear</labelNoun>
+    <spawnThingOnRemoved>ArchotechEar</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.50</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartArchotechBase">
+    <defName>ArchotechEar</defName>
+    <label>archotech ear</label>
+    <description>An advanced artificial ear implant. A collection of invisible subdermal microphones capture sound and transmit it to a biogel nerve interface that links directly with the auditory nerve. It's sensitive enough to hear a cat before you see it, can't be damaged by loud noise, and automatically tunes itself to pick out meaningful sounds in noisy environments.</description>
+    <techLevel>Archotech</techLevel>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>2800</MarketValue>
+      <Mass>7</Mass>
+    </statBases>
+  </ThingDef>
+
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>InstallArchotechEar</defName>
     <label>install archotech ear</label>
@@ -650,91 +700,32 @@
     <addsHediff>ArchotechEar</addsHediff>
   </RecipeDef>
 
-    <!-- Added bionic parts 	-->
+  <!-- TODO: archotech lung -->
 
-  <RecipeDef ParentName="SurgeryFlesh">
-    <defName>InstallArchotechKidney</defName>
-    <label>install archotech kidney</label>
-    <description>Install a archotech kidney.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
-    <jobString>Installing archotech kidney.</jobString>
-    <workAmount>2500</workAmount>
-    <skillRequirements>
-      <Medicine>3</Medicine>
-    </skillRequirements>
-    <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>ArchotechKidney</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
-    </ingredients>
-    <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
-      <thingDefs>
-        <li>ArchotechKidney</li>
-      </thingDefs>
-    </fixedIngredientFilter>
-    <appliedOnFixedBodyParts>
-      <li>Kidney</li>
-    </appliedOnFixedBodyParts>
-    <addsHediff>ArchotechKidney</addsHediff>
-  </RecipeDef>
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>ArchotechLung</defName>
+    <label>archotech lung</label>
+    <labelNoun>an archotech lung</labelNoun>
+    <spawnThingOnRemoved>ArchotechLung</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.50</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
-    <defName>InstallArchotechLiver</defName>
-    <label>install archotech liver</label>
-    <description>Install a archotech liver.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
-    <jobString>Installing archotech liver.</jobString>
-    <workAmount>2500</workAmount>
-    <skillRequirements>
-      <Medicine>3</Medicine>
-    </skillRequirements>
-    <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
-            <li>ArchotechLiver</li>
-          </thingDefs>
-        </filter>
-        <count>1</count>
-      </li>
-    </ingredients>
-    <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
-      <thingDefs>
-        <li>ArchotechLiver</li>
-      </thingDefs>
-    </fixedIngredientFilter>
-    <appliedOnFixedBodyParts>
-      <li>Liver</li>
-    </appliedOnFixedBodyParts>
-    <addsHediff>ArchotechLiver</addsHediff>
-  </RecipeDef>
+  <ThingDef ParentName="BodyPartArchotechBase">
+    <defName>ArchotechLung</defName>
+    <label>archotech lung</label>
+    <description>An archotech human lung. A pair of these form the core of the human respiratory system.</description>
+    <techLevel>Archotech</techLevel>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>2800</MarketValue>
+      <Mass>7</Mass>
+    </statBases>
+  </ThingDef>
 
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>InstallArchotechLung</defName>
@@ -778,106 +769,7 @@
     <addsHediff>ArchotechLung</addsHediff>
   </RecipeDef>
 
-    <!-- bases -->
-
-    <HediffDef Name="AddedBodyPartBase" Abstract="True">
-        <hediffClass>Hediff_AddedPart</hediffClass>
-        <defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
-        <isBad>false</isBad>
-    </HediffDef>
-
-    <!-- Added bionic parts 	-->
-
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>BionicLung</defName>
-    <label>bionic lung</label>
-    <labelNoun>an bionic lung</labelNoun>
-    <spawnThingOnRemoved>BionicLung</spawnThingOnRemoved>
-    <addedPartProps>
-      <solid>true</solid>
-      <partEfficiency>1.25</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
-
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>BionicKidney</defName>
-    <label>bionic kidney</label>
-    <labelNoun>an bionic kidney</labelNoun>
-    <spawnThingOnRemoved>BionicKidney</spawnThingOnRemoved>
-    <addedPartProps>
-      <solid>true</solid>
-      <partEfficiency>1.25</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
-
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>BionicLiver</defName>
-    <label>bionic liver</label>
-    <labelNoun>an bionic liver</labelNoun>
-    <spawnThingOnRemoved>BionicLiver</spawnThingOnRemoved>
-    <addedPartProps>
-      <solid>true</solid>
-      <partEfficiency>1.25</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
-
-    <!-- Added archotech parts -->
-
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>ArchotechSpine</defName>
-    <label>archotech spine</label>
-    <labelNoun>an archotech spine</labelNoun>
-    <spawnThingOnRemoved>ArchotechSpine</spawnThingOnRemoved>
-    <addedPartProps>
-      <solid>true</solid>
-    <!-- Added the following line to see if spine efficiency even does anything -->
-      <partEfficiency>1.50</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
-
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>ArchotechHeart</defName>
-    <label>archotech heart</label>
-    <labelNoun>an archotech heart</labelNoun>
-    <spawnThingOnRemoved>ArchotechHeart</spawnThingOnRemoved>
-    <addedPartProps>
-      <solid>true</solid>
-      <partEfficiency>1.50</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
-
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>ArchotechStomach</defName>
-    <label>archotech stomach</label>
-    <labelNoun>an archotech stomach</labelNoun>
-    <spawnThingOnRemoved>ArchotechStomach</spawnThingOnRemoved>
-    <addedPartProps>
-      <solid>true</solid>
-      <partEfficiency>1.50</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
-
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>ArchotechEar</defName>
-    <label>archotech ear</label>
-    <labelNoun>an archotech ear</labelNoun>
-    <spawnThingOnRemoved>ArchotechEar</spawnThingOnRemoved>
-    <addedPartProps>
-      <solid>true</solid>
-      <partEfficiency>1.50</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
-
-  <HediffDef ParentName="AddedBodyPartBase">
-    <defName>ArchotechLung</defName>
-    <label>archotech lung</label>
-    <labelNoun>an archotech lung</labelNoun>
-    <spawnThingOnRemoved>ArchotechLung</spawnThingOnRemoved>
-    <addedPartProps>
-      <solid>true</solid>
-      <partEfficiency>1.50</partEfficiency>
-    </addedPartProps>
-  </HediffDef>
+  <!-- TODO: archotech kidney -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechKidney</defName>
@@ -890,6 +782,64 @@
     </addedPartProps>
   </HediffDef>
 
+  <ThingDef ParentName="BodyPartArchotechBase">
+    <defName>ArchotechKidney</defName>
+    <label>archotech kidney</label>
+    <description>An archotech human kidney. Filters and removes waste products from the blood.</description>
+    <techLevel>Archotech</techLevel>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>2800</MarketValue>
+      <Mass>7</Mass>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallArchotechKidney</defName>
+    <label>install archotech kidney</label>
+    <description>Install a archotech kidney.</description>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <jobString>Installing archotech kidney.</jobString>
+    <workAmount>2500</workAmount>
+    <skillRequirements>
+      <Medicine>3</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ArchotechKidney</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>ArchotechKidney</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Kidney</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>ArchotechKidney</addsHediff>
+  </RecipeDef>
+
+  <!-- TODO: archotech liver -->
+
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechLiver</defName>
     <label>archotech liver</label>
@@ -900,5 +850,61 @@
       <partEfficiency>1.50</partEfficiency>
     </addedPartProps>
   </HediffDef>
+
+  <ThingDef ParentName="BodyPartArchotechBase">
+    <defName>ArchotechLiver</defName>
+    <label>archotech liver</label>
+    <description>An archotech human liver. Plays an important role in metabolism.</description>
+    <techLevel>Archotech</techLevel>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>2800</MarketValue>
+      <Mass>7</Mass>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallArchotechLiver</defName>
+    <label>install archotech liver</label>
+    <description>Install a archotech liver.</description>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <jobString>Installing archotech liver.</jobString>
+    <workAmount>2500</workAmount>
+    <skillRequirements>
+      <Medicine>3</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ArchotechLiver</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>ArchotechLiver</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Liver</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>ArchotechLiver</addsHediff>
+  </RecipeDef>
 
 </Defs>
