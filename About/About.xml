@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>More Bionics</name>
+  <author>Aethaeran</author>
+  <packageId>Aethaeran.More.Bionics</packageId>
+  <url></url>
+  <supportedVersions>
+    <li>1.0</li>
+    <li>1.1</li>
+    <li>1.2</li>
+    <li>1.3</li>
+  </supportedVersions>
+<description>Creates bionic and archotech versions of each organ and replaceable body part. Other bionic organs have the same cost as a bionic organ. Archotech parts can still only be gained through trading.
+
+LICENSE
+
+Free. As in free beer. Copy, learn and be respectful.
+</description>
+</ModMetaData>
