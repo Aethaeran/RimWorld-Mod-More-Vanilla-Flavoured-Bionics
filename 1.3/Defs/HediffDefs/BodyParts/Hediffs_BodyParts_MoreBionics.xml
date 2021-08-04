@@ -493,13 +493,17 @@
     <addsHediff>ArchotechLung</addsHediff>
   </RecipeDef>
 
-  <!-- TODO: archotech kidney -->
+  <!-- archotech kidney -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechKidney</defName>
     <label>archotech kidney</label>
     <labelNoun>an archotech kidney</labelNoun>
+    <description>An installed archotech kidney.</description>
+    <descriptionHyperlinks><ThingDef>ArchotechKidney</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>ArchotechKidney</spawnThingOnRemoved>
+    <woundAnchorRange>0</woundAnchorRange>
+    <displayWound>true</displayWound>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>1.50</partEfficiency>
@@ -510,35 +514,26 @@
     <defName>ArchotechKidney</defName>
     <label>archotech kidney</label>
     <description>An archotech human kidney. Filters and removes waste products from the blood.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
+    <descriptionHyperlinks><RecipeDef>InstallArchotechKidney</RecipeDef></descriptionHyperlinks>
     <statBases>
       <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
+      <Mass>1</Mass>
     </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallArchotechKidney</defName>
     <label>install archotech kidney</label>
-    <description>Install a archotech kidney.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <description>Install an archotech kidney.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ArchotechKidney</ThingDef>
+      <HediffDef>ArchotechKidney</HediffDef>
+    </descriptionHyperlinks>
     <jobString>Installing archotech kidney.</jobString>
-    <workAmount>2500</workAmount>
-    <skillRequirements>
-      <Medicine>3</Medicine>
-    </skillRequirements>
     <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
       <li>
         <filter>
           <thingDefs>
@@ -549,9 +544,6 @@
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
       <thingDefs>
         <li>ArchotechKidney</li>
       </thingDefs>
