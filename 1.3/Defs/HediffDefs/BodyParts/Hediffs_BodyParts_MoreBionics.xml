@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!-- TODO: Double check costList for each item -->
+  <!-- TODO: Double check Mass for each item -->
+  <!-- TODO: Check descriptions for each hediff -->
+  <!-- TODO: Check descriptions for each item -->
+  <!-- TODO: Check descriptions for each recipe -->
+  <!-- TODO: Expand descriptions for archotech items to mimic bionic variants -->
+  <!-- TODO: Dev mode tests -->
+
   <!-- bionic lung -->
 
   <HediffDef ParentName="AddedBodyPartBase">
