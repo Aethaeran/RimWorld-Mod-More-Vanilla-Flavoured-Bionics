@@ -251,13 +251,17 @@
     <addsHediff>ArchotechSpine</addsHediff>
   </RecipeDef>
 
-  <!-- TODO: archotech heart -->
+  <!-- archotech heart -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechHeart</defName>
     <label>archotech heart</label>
     <labelNoun>an archotech heart</labelNoun>
+    <description>An installed archotech heart.</description>
+    <descriptionHyperlinks><ThingDef>ArchotechHeart</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>ArchotechHeart</spawnThingOnRemoved>
+    <woundAnchorRange>0</woundAnchorRange>
+    <displayWound>true</displayWound>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>1.50</partEfficiency>
@@ -268,35 +272,25 @@
     <defName>ArchotechHeart</defName>
     <label>archotech heart</label>
     <description>An advanced artificial heart. It has synthetic muscle fibers for a realistic heartbeat, plus a high-flow pump for rapid circulation during high stress. It is better than a archotech heart in almost every way.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
+    <descriptionHyperlinks><RecipeDef>InstallArchotechHeart</RecipeDef></descriptionHyperlinks>
     <statBases>
       <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
     </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallArchotechHeart</defName>
     <label>install archotech heart</label>
-    <description>Install a archotech heart.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <description>Install an archotech heart.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ArchotechHeart</ThingDef>
+      <HediffDef>ArchotechHeart</HediffDef>
+    </descriptionHyperlinks>
     <jobString>Installing archotech heart.</jobString>
-    <workAmount>2500</workAmount>
-    <skillRequirements>
-      <Medicine>3</Medicine>
-    </skillRequirements>
     <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
       <li>
         <filter>
           <thingDefs>
@@ -307,9 +301,6 @@
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
       <thingDefs>
         <li>ArchotechHeart</li>
       </thingDefs>
