@@ -139,7 +139,7 @@
 		<workSkillLearnFactor>16</workSkillLearnFactor>
 	</RecipeDef>
 
-  <!-- TODO: bionic lung -->
+  <!-- bionic lung -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>BionicLung</defName>
@@ -202,77 +202,49 @@
     <addsHediff>BionicLung</addsHediff>
   </RecipeDef>
 
-  <!-- TODO: bionic kidney -->
+  <!-- bionic kidney -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>BionicKidney</defName>
     <label>bionic kidney</label>
     <labelNoun>an bionic kidney</labelNoun>
+    <description>An installed bionic kidney.</description>
+    <descriptionHyperlinks><ThingDef>BionicKidney</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>BionicKidney</spawnThingOnRemoved>
+    <woundAnchorRange>0</woundAnchorRange>
+    <displayWound>true</displayWound>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>1.25</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
   </HediffDef>
-
-  <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicKidney</defName>
     <label>bionic kidney</label>
     <description>A bionic human kidney. Filters and removes waste products from the blood.</description>
-    <graphicData>
-      <texPath>Things/Item/Health/HealthItem</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.80</drawSize>
-    </graphicData>
-    <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
-      <effectWorking>Smith</effectWorking>
-      <soundWorking>Recipe_Smith</soundWorking>
-      <recipeUsers>
-        <li>FabricationBench</li>
-      </recipeUsers>
-      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
-      <skillRequirements>
-        <Crafting>8</Crafting>
-      </skillRequirements>
-      <researchPrerequisite>Bionics</researchPrerequisite>
-    </recipeMaker>
-    <techLevel>Spacer</techLevel>
+    <descriptionHyperlinks><RecipeDef>InstallBionicKidney</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>10</Plasteel>
       <ComponentSpacer>4</ComponentSpacer>
     </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>
-      <WorkToMake>38000</WorkToMake>
       <Mass>0.3</Mass>
     </statBases>
-    <techHediffsTags>
-      <li>Advanced</li>
-    </techHediffsTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallBionicKidney</defName>
     <label>install bionic kidney</label>
     <description>Install a bionic kidney.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <descriptionHyperlinks>
+      <ThingDef>BionicKidney</ThingDef>
+      <HediffDef>BionicKidney</HediffDef>
+    </descriptionHyperlinks>
     <jobString>Installing bionic kidney.</jobString>
-    <workAmount>2000</workAmount>
-    <skillRequirements>
-      <Medicine>5</Medicine>
-    </skillRequirements>
     <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
       <li>
         <filter>
           <thingDefs>
@@ -283,9 +255,6 @@
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
       <thingDefs>
         <li>BionicKidney</li>
       </thingDefs>
