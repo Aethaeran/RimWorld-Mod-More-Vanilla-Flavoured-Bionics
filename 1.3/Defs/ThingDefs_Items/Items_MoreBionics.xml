@@ -6,24 +6,27 @@
   <ThingDef Name="BodyPartBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
     <useHitPoints>true</useHitPoints>
     <selectable>true</selectable>
-    <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <Flammability>0.7</Flammability>
-			<Beauty>-4</Beauty>
-		</statBases>
     <altitudeLayer>Item</altitudeLayer>
     <tickerType>Never</tickerType>
     <alwaysHaulable>true</alwaysHaulable>
     <isTechHediff>true</isTechHediff>
+    <pathCost>14</pathCost>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+      <Beauty>-4</Beauty>
+      <DeteriorationRate>2.0</DeteriorationRate>
+      <Mass>1</Mass>
+    </statBases>
     <tradeTags>
       <li>TechHediff</li>
     </tradeTags>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
     </comps>
-    <pathCost>10</pathCost>
   </ThingDef>
 
   <!-- TODO: Could not resolve cross-reference to Verse.ThingCategoryDef named BodyPartsArtificial (wanter=thingCategories) -->
@@ -37,11 +40,12 @@
 		</statBases>
   </ThingDef>
 
-  <ThingDef Name="BodyPartNaturalBase" ParentName="BodyPartBase"  Abstract="True">
+  <ThingDef Name="BodyPartNaturalBase" ParentName="BodyPartBase" Abstract="True">
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemNatural</texPath>
+      <texPath>Things/Item/Health/HealthItem</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
+      <color>(190,190,190)</color>
     </graphicData>
     <thingCategories>
       <li>BodyPartsNatural</li>
@@ -53,42 +57,55 @@
 
   <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
 
-  <ThingDef Name="BodyPartProstheticBase" ParentName="BodyPartArtificialBase" Abstract="True">
+  <ThingDef Name="BodyPartProstheticBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>BodyPartsProsthetic</li>
+    </thingCategories>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemProsthetic</texPath>
+      <texPath>Things/Item/Health/HealthItem</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
+      <color>(154,124,104)</color>
     </graphicData>
-    <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
-      <effectWorking>Smith</effectWorking>
-      <soundWorking>Recipe_Smith</soundWorking>
-      <recipeUsers>
-        <li>TableMachining</li>
-      </recipeUsers>
-      <skillRequirements>
-        <Crafting>5</Crafting>
-      </skillRequirements>
-      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
-      <researchPrerequisite>Prosthetics</researchPrerequisite>
-    </recipeMaker>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+    </statBases>
   </ThingDef>
 
   <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
 
-  <ThingDef Name="BodyPartBionicBase" ParentName="BodyPartProstheticBase" Abstract="True">
+  <ThingDef Name="BodyPartBionicBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemBionic</texPath>
+      <texPath>Things/Item/Health/HealthItem</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
+      <color>(189,169,118)</color>
     </graphicData>
+    <tradeTags>
+      <li>Bionic</li>
+    </tradeTags>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <statBases>
+      <WorkToMake>26000</WorkToMake>
+    </statBases>
     <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
       <researchPrerequisite>Bionics</researchPrerequisite>
-      <recipeUsers Inherit="False">
+      <recipeUsers>
         <li>FabricationBench</li>
       </recipeUsers>
     </recipeMaker>
@@ -96,14 +113,21 @@
 
   <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemArchotech in any active mod or in base resources. -->
 
-  <ThingDef Name="BodyPartArchotechBase" ParentName="BodyPartArtificialBase" Abstract="True">
+  <ThingDef Name="BodyPartArchotechBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Archotech</techLevel>
+    <thingCategories>
+      <li>BodyPartsArchotech</li>
+    </thingCategories>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemArchotech</texPath>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <color>(155,165,148)</color>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
     </graphicData>
+    <statBases>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
   </ThingDef>
-
 
   <!-- bionic organs -->
 
