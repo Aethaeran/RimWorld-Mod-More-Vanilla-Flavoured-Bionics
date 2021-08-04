@@ -29,8 +29,6 @@
     </comps>
   </ThingDef>
 
-  <!-- TODO: Could not resolve cross-reference to Verse.ThingCategoryDef named BodyPartsArtificial (wanter=thingCategories) -->
-
   <ThingDef Name="BodyPartArtificialBase" ParentName="BodyPartBase" Abstract="True">
     <thingCategories>
       <li>BodyPartsArtificial</li>
@@ -73,8 +71,6 @@
     </statBases>
   </ThingDef>
 
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemBionic in any active mod or in base resources. -->
-
   <ThingDef Name="BodyPartBionicBase" ParentName="BodyPartBase" Abstract="True">
     <techLevel>Spacer</techLevel>
     <thingCategories>
@@ -111,8 +107,6 @@
     </recipeMaker>
   </ThingDef>
 
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItemArchotech in any active mod or in base resources. -->
-
   <ThingDef Name="BodyPartArchotechBase" ParentName="BodyPartBase" Abstract="True">
     <techLevel>Archotech</techLevel>
     <thingCategories>
@@ -132,7 +126,6 @@
   <!-- bionic organs -->
 
   <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItem in any active mod or in base resources. -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicLung</defName>
@@ -172,7 +165,6 @@
   </ThingDef>
 
   <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItem in any active mod or in base resources. -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicKidney</defName>
@@ -212,7 +204,6 @@
   </ThingDef>
 
   <!-- TODO: Could not resolve cross-reference: No RimWorld.StatDef named SmithingSpeed found to give to Verse.RecipeMakerProperties Verse.RecipeMakerProperties -->
-  <!-- TODO: Could not load UnityEngine.Texture2D at Things/Item/Health/HealthItem in any active mod or in base resources. -->
 
   <ThingDef ParentName="BodyPartBionicBase">
     <defName>BionicLiver</defName>
