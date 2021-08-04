@@ -328,8 +328,6 @@
     <addsHediff>BionicLiver</addsHediff>
   </RecipeDef>
 
-  <!-- archotech organs -->
-
   <!-- archotech spine -->
 
   <HediffDef ParentName="AddedBodyPartBase">
