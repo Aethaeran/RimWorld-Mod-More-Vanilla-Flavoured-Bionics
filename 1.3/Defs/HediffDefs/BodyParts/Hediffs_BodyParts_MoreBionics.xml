@@ -311,13 +311,17 @@
     <addsHediff>ArchotechHeart</addsHediff>
   </RecipeDef>
 
-  <!-- TODO: archotech stomach -->
+  <!-- archotech stomach -->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>ArchotechStomach</defName>
     <label>archotech stomach</label>
     <labelNoun>an archotech stomach</labelNoun>
+    <description>An installed archotech stomach.</description>
+    <descriptionHyperlinks><ThingDef>ArchotechStomach</ThingDef></descriptionHyperlinks>
     <spawnThingOnRemoved>ArchotechStomach</spawnThingOnRemoved>
+    <woundAnchorRange>0</woundAnchorRange>
+    <displayWound>true</displayWound>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>1.50</partEfficiency>
@@ -328,35 +332,26 @@
     <defName>ArchotechStomach</defName>
     <label>archotech stomach</label>
     <description>An advanced artificial stomach. A set of sensors and chemical synthesizers efficiently digest nearly any energy-bearing foodstuff. An integrated lattice-dust healing system automatically repairs any damage caused by the powerful acids. It is better than a archotech stomach in almost every way.</description>
-    <techLevel>Archotech</techLevel>
-    <thingSetMakerTags>
-      <li>RewardSpecial</li>
-    </thingSetMakerTags>
+    <descriptionHyperlinks><RecipeDef>InstallArchotechStomach</RecipeDef></descriptionHyperlinks>
     <statBases>
       <MarketValue>2800</MarketValue>
-      <Mass>7</Mass>
+      <Mass>2</Mass>
     </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallArchotechStomach</defName>
     <label>install archotech stomach</label>
-    <description>Install a archotech stomach.</description>
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <description>Install an archotech stomach.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ArchotechStomach</ThingDef>
+      <HediffDef>ArchotechStomach</HediffDef>
+    </descriptionHyperlinks>
     <jobString>Installing archotech stomach.</jobString>
-    <workAmount>2500</workAmount>
-    <skillRequirements>
-      <Medicine>3</Medicine>
-    </skillRequirements>
     <ingredients>
-      <li>
-        <filter>
-          <categories>
-            <li>Medicine</li>
-          </categories>
-        </filter>
-        <count>2</count>
-      </li>
       <li>
         <filter>
           <thingDefs>
@@ -367,9 +362,6 @@
       </li>
     </ingredients>
     <fixedIngredientFilter>
-      <categories>
-        <li>Medicine</li>
-      </categories>
       <thingDefs>
         <li>ArchotechStomach</li>
       </thingDefs>
